@@ -1,0 +1,73 @@
+@model IEnumerable<DocAppoint.Models.Appointment>
+@{
+    ViewData["Title"] = "History";
+}
+@section Styles {
+    <link href="~/css/Dashboard/History.css" rel="stylesheet" asp-append-version="true" />
+}
+
+<div class="history-page">
+    <div class="container history-container">
+        <div class="history-header">
+            <div class="header-left">
+                <div class="header-icon"><i class="bi bi-clock-history"></i></div>
+                <div>
+                    <h1>Appointment History</h1>
+                    <p>All your bookings for <strong>@User.Identity!.Name</strong></p>
+                </div>
+            </div>
+            <div class="header-right">
+                <span class="count-pill"><i class="bi bi-calendar-check"></i> @Model.Count() Total</span>
+                <a asp-controller="Appointment" asp-action="Create" class="btn-new">Book New <i class="bi bi-plus-lg"></i></a>
+            </div>
+        </div>
+
+        @if (!Model.Any())
+        {
+            <div class="empty-card">
+                <div class="empty-icon"><i class="bi bi-inbox"></i></div>
+                <h3>No appointments yet</h3>
+                <p>Book your first appointment and history will appear here</p>
+                <a asp-controller="Appointment" asp-action="Create" class="btn-book">Book Now</a>
+            </div>
+        }
+        else
+        {
+            <div class="table-card">
+                <div class="table-responsive">
+                    <table class="modern-table">
+                        <thead>
+                            <tr>
+                                <th>Patient</th>
+                                <th>Contact</th>
+                                <th>Disease</th>
+                                <th>Doctor</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="patient-cell">
+                                            <span class="avatar-sm"><i class="bi bi-person-fill"></i></span>
+                                            <div>
+                                                <strong>@item.PatientName</strong>
+                                                <span>@item.PatientEmail</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="phone-pill"><i class="bi bi-telephone"></i> @item.PatientPhone</span></td>
+                                    <td><span class="badge-disease">@item.Disease</span></td>
+                                    <td><span class="doctor-name"><i class="bi bi-person-badge"></i> @item.DoctorName</span></td>
+                                    <td><span class="date-pill"><i class="bi bi-calendar-event"></i> @item.AppointmentDate.ToString("dd MMM yyyy")</span></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+    </div>
+</div>

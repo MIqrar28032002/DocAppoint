@@ -1,0 +1,10 @@
+## Ignore Visual Studio temporary files, build results
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+## Ignore user secrets
+appsettings.Development.json
+secrets.json

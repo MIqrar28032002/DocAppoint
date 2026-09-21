@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+@section Styles {
+    <link href="~/css/Dashboard/Index.css" rel="stylesheet" asp-append-version="true" />
+}
+
+<div class="dash-page">
+    <div class="container dash-container">
+
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert-modern alert-success" id="alertBox">
+                <div class="alert-icon"><i class="bi bi-check-circle-fill"></i></div>
+                <span>@TempData["Success"]</span>
+                <button class="alert-close" onclick="document.getElementById('alertBox').remove()"><i class="bi bi-x"></i></button>
+            </div>
+        }
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert-modern alert-error" id="alertBox">
+                <div class="alert-icon"><i class="bi bi-exclamation-circle-fill"></i></div>
+                <span>@TempData["Error"]</span>
+                <button class="alert-close" onclick="document.getElementById('alertBox').remove()"><i class="bi bi-x"></i></button>
+            </div>
+        }
+
+        <div class="dash-welcome">
+            <div class="welcome-left">
+                <div class="welcome-icon"><i class="bi bi-person-fill"></i></div>
+                <div>
+                    <h1>Welcome, <span>@User.Identity!.Name</span></h1>
+                    <p>Manage your health appointments easily</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dash-grid">
+            <a class="dash-card" asp-controller="Appointment" asp-action="Create">
+                <div class="card-icon icon-dark"><i class="bi bi-calendar-plus"></i></div>
+                <div class="card-text">
+                    <strong>Book Appointment</strong>
+                    <span>Book in 60 seconds</span>
+                </div>
+                <i class="bi bi-arrow-right card-arrow"></i>
+            </a>
+
+            <a class="dash-card" asp-controller="Appointment" asp-action="Index">
+                <div class="card-icon icon-green"><i class="bi bi-calendar-check"></i></div>
+                <div class="card-text">
+                    <strong>My History</strong>
+                    <span>View all bookings</span>
+                </div>
+                <i class="bi bi-arrow-right card-arrow"></i>
+            </a>
+        </div>
+
+        <div class="dash-info">
+            <i class="bi bi-info-circle"></i>
+            <span>Your email <b>@User.Identity!.Name</b> is auto-filled in booking form.</span>
+        </div>
+    </div>
+</div>

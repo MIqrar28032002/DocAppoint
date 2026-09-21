@@ -1,0 +1,106 @@
+﻿@{
+    ViewData["Title"] = "How to Appointment";
+}
+@section Styles {
+    <link href="~/css/Appoint.css" rel="stylesheet" asp-append-version="true" />
+}
+
+<section class="appoint-section">
+    <div class="appoint-bg-grid"></div>
+    <div class="appoint-blob blob-1"></div>
+    <div class="appoint-blob blob-2"></div>
+
+    <div class="container">
+        <div class="appoint-header">
+            <div class="header-badge">
+                <i class="bi bi-lightning-charge-fill"></i> Easy 4-Step Process
+            </div>
+            <h1>How to Book Your <span>Appointment</span></h1>
+            <p>Follow these simple steps to book your doctor appointment in less than 60 seconds</p>
+        </div>
+
+        <div class="steps-wrapper">
+            <div class="steps-line"></div>
+
+            <div class="step-card step-1">
+                <div class="step-number">01</div>
+                <div class="step-icon icon-blue">
+                    <i class="bi bi-person-plus"></i>
+                </div>
+                <div class="step-content">
+                    <h3>Create Account & Register</h3>
+                    <p>Sign up with your email, phone and basic information. Quick verification and your account is ready in 10 seconds.</p>
+                    <div class="step-features">
+                        <span><i class="bi bi-check-circle-fill"></i> Email Verification</span>
+                        <span><i class="bi bi-check-circle-fill"></i> Fill Personal Info</span>
+                    </div>
+                </div>
+                <div class="step-image">
+                    <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=300&auto=format&fit=crop" alt="Register">
+                    <div class="image-badge"><i class="bi bi-shield-lock-fill"></i> 100% Secure</div>
+                </div>
+            </div>
+
+            <div class="step-card step-2">
+                <div class="step-number">02</div>
+                <div class="step-icon icon-dark">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                </div>
+                <div class="step-content">
+                    <h3>Login to Your Account</h3>
+                    <p>Login with your credentials and access your personalized dashboard with all health records and history.</p>
+                    <div class="step-features">
+                        <span><i class="bi bi-check-circle-fill"></i> Secure Login</span>
+                        <span><i class="bi bi-check-circle-fill"></i> Dashboard Access</span>
+                    </div>
+                </div>
+                <div class="step-image">
+                    <img src="https://images.unsplash.com/photo-1555421689-d68471e189f2?q=80&w=300&auto=format&fit=crop" alt="Login">
+                    <div class="image-badge"><i class="bi bi-lightning-fill"></i> Instant Access</div>
+                </div>
+            </div>
+
+            <div class="step-card step-3">
+                <div class="step-number">03</div>
+                <div class="step-icon icon-green">
+                    <i class="bi bi-heart-pulse"></i>
+                </div>
+                <div class="step-content">
+                    <h3>Select Doctor & Appointment Type</h3>
+                    <p>Choose from Video Call, Clinic Visit or Home Visit. Browse verified specialists by category and availability.</p>
+                    <div class="type-tags">
+                        <span class="tag tag-video"><i class="bi bi-camera-video-fill"></i> Video Call</span>
+                        <span class="tag tag-clinic"><i class="bi bi-hospital-fill"></i> Clinic Visit</span>
+                        <span class="tag tag-home"><i class="bi bi-house-heart-fill"></i> Home Visit</span>
+                    </div>
+                </div>
+                <div class="step-image">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=300&auto=format&fit=crop" alt="Doctor Type">
+                    <div class="image-badge"><i class="bi bi-people-fill"></i> 500+ Doctors</div>
+                </div>
+            </div>
+
+            <div class="step-card step-4">
+                <div class="step-number">04</div>
+                <div class="step-icon icon-primary">
+                    <i class="bi bi-calendar-check"></i>
+                </div>
+                <div class="step-content">
+                    <h3>Click Appointment & Confirm Booking</h3>
+                    <p>Select date, time slot, fill patient info and confirm. Get instant confirmation via SMS and email.</p>
+                    <div class="step-features">
+                        <span><i class="bi bi-check-circle-fill"></i> Choose Date & Time</span>
+                        <span><i class="bi bi-check-circle-fill"></i> Instant Confirmation</span>
+                    </div>
+                    <a class="book-now-btn" asp-controller="Account" asp-action="Register">
+                        Book Now <i class="bi bi-arrow-up-right"></i>
+                    </a>
+                </div>
+                <div class="step-image">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=300&auto=format&fit=crop" alt="Book Appointment">
+                    <div class="image-badge success"><i class="bi bi-check-circle-fill"></i> Confirmed</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

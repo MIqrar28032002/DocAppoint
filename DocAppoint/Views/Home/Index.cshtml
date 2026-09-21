@@ -1,0 +1,109 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+@section Styles {
+    <link href="~/css/Index.css" rel="stylesheet" asp-append-version="true" />
+}
+
+<section class="hero-fixed">
+    <div class="hero-bg-blob blob-1"></div>
+    <div class="hero-bg-blob blob-2"></div>
+    <div class="hero-bg-grid"></div>
+
+    <div class="container hero-container">
+        <div class="hero-left">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <i class="bi bi-shield-check"></i>
+                Trusted by 12,500+ Patients
+            </div>
+
+            <h1 class="hero-title">
+                <span class="title-line">Book Your</span>
+                <span class="title-line title-gradient">Doctor Appointment</span>
+                <span class="title-line">In Seconds</span>
+            </h1>
+
+            <p class="hero-desc">
+                Skip the waiting room. Connect with verified specialists, choose your time slot and get confirmed instantly. Your health, simplified.
+            </p>
+
+            <div class="hero-actions">
+                <a class="hero-btn hero-btn-primary" href="#">
+                    Book Appointment <i class="bi bi-arrow-up-right"></i>
+                </a>
+                <a class="hero-btn hero-btn-secondary" href="#">
+                    <span class="play-icon"><i class="bi bi-play-fill"></i></span>
+                    How it Works
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <strong>500+</strong>
+                    <span>Expert Doctors</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <strong>98%</strong>
+                    <span>Satisfaction Rate</span>
+                </div>
+                <div class="stat-item">
+                    <strong>24/7</strong>
+                    <span>Support</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="appointment-showcase">
+                <div class="showcase-card main-card">
+                    <div class="card-header">
+                        <img src="https://i.pravatar.cc/100?img=33" alt="Doctor">
+                        <div>
+                            <h4>Dr. Sarah Wilson</h4>
+                            <span><i class="bi bi-star-fill"></i> 4.9 Cardiologist</span>
+                        </div>
+                        <span class="live-dot"></span>
+                    </div>
+                    <div class="card-slots">
+                        <span class="slot active">09:00 AM</span>
+                        <span class="slot active">10:30 AM</span>
+                        <span class="slot">12:00 PM</span>
+                        <span class="slot booked">02:00 PM</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price">$45 Consultation</span>
+                        <button class="confirm-btn">Confirm <i class="bi bi-check2"></i></button>
+                    </div>
+                </div>
+
+                <div class="showcase-card float-card card-1">
+                    <div class="float-icon icon-blue"><i class="bi bi-calendar-check"></i></div>
+                    <div>
+                        <strong>Appointment Confirmed</strong>
+                        <span>Today, 10:30 AM</span>
+                    </div>
+                </div>
+
+                <div class="showcase-card float-card card-2">
+                    <div class="float-icon icon-green"><i class="bi bi-heart-pulse"></i></div>
+                    <div>
+                        <strong>Health Report</strong>
+                        <span>Ready to view</span>
+                    </div>
+                </div>
+
+                <div class="showcase-card float-card card-3">
+                    <img src="https://i.pravatar.cc/100?img=16" alt="Patient">
+                    <div>
+                        <strong>Emily R.</strong>
+                        <span>Booked 2 min ago</span>
+                    </div>
+                    <span class="mini-check"><i class="bi bi-check"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

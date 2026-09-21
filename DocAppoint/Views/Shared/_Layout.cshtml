@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DocAppoint</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Root.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Layout.css" asp-append-version="true" />
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+    <header class="doc-header">
+        <nav class="navbar navbar-expand-lg doc-navbar" id="mainNavbar">
+            <div class="container doc-nav-container">
+                <a class="navbar-brand doc-brand" asp-controller="Home" asp-action="Index">
+                    <span class="doc-brand-icon"><i class="bi bi-heart-pulse-fill"></i></span>
+                    DocAppoint
+                </a>
+                <button class="navbar-toggler doc-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#docNav">
+                    <i class="bi bi-list"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="docNav">
+                    <ul class="navbar-nav doc-nav-pills mx-auto">
+                        <li class="nav-item"><a class="nav-link active" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Appoint">How to Book an Appointment</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    </ul>
+                    <div class="doc-actions">
+                        <partial name="_LoginPartial" />
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="app-wrapper">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="doc-footer-one">
+        <div class="container doc-footer-one-inner">
+            <div class="footer-left">
+                <span class="footer-brand-mini"><i class="bi bi-heart-pulse-fill"></i> DocAppoint</span>
+                <span class="footer-copy">&copy; 2026 DocAppoint. All rights reserved.</span>
+            </div>
+            <div class="footer-right">
+                <a asp-controller="Home" asp-action="Contact">Contact</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+            const nav = document.getElementById('mainNavbar');
+            window.addEventListener('scroll', () => {
+                nav.classList.toggle('scrolled', window.scrollY > 10);
+            });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

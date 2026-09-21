@@ -1,0 +1,79 @@
+﻿@using DocAppoint.ViewModel
+@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+@section Styles {
+    <link href="~/css/Register.css" rel="stylesheet" asp-append-version="true" />
+}
+
+<section class="register-section">
+    <div class="register-bg-grid"></div>
+    <div class="register-blob blob-1"></div>
+    <div class="register-blob blob-2"></div>
+
+    <div class="container register-container">
+        <div class="register-card">
+            <div class="card-top">
+                <div class="top-icon">
+                    <i class="bi bi-person-plus-fill"></i>
+                </div>
+                <h2>Create Account</h2>
+                <p>Join DocAppoint - Book doctors in 60 seconds</p>
+            </div>
+
+            <form method="post" class="register-form">
+                <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+
+                <div class="form-group">
+                    <label asp-for="Name" class="form-label">Full Name</label>
+                    <div class="input-wrap">
+                        <i class="bi bi-person"></i>
+                        <input asp-for="Name" class="form-control" placeholder="John Doe" />
+                    </div>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Email" class="form-label">Email Address</label>
+                    <div class="input-wrap">
+                        <i class="bi bi-envelope"></i>
+                        <input asp-for="Email" type="email" class="form-control" placeholder="john@example.com" />
+                    </div>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label asp-for="Password" class="form-label">Password</label>
+                        <div class="input-wrap">
+                            <i class="bi bi-lock"></i>
+                            <input asp-for="Password" type="password" class="form-control" placeholder="••••••••" />
+                        </div>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ConfirmPassword" class="form-label">Confirm Password</label>
+                        <div class="input-wrap">
+                            <i class="bi bi-lock-fill"></i>
+                            <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="••••••••" />
+                        </div>
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-register-submit">
+                    Create Account <i class="bi bi-arrow-up-right"></i>
+                </button>
+
+                <div class="form-footer">
+                    Already have an account? <a asp-controller="Account" asp-action="Login">Login here</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
