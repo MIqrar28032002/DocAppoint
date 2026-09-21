@@ -65,3 +65,7 @@ wwwroot/lib/** linguist-vendored
 *.min.css linguist-vendored
 *.min.js linguist-vendored
 libman.json linguist-vendored
+wwwroot/lib/** linguist-vendored
+*.min.css linguist-vendored
+*.min.js linguist-vendored
+libman.json linguist-vendored
